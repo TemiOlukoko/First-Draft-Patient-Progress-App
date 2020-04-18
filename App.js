@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
 import PlaceHolder from './PP/Components/Pages/PlaceHolder';
 
-
+// kate
 const Stack = createStackNavigator()
 
 const HomeScreen = ({navigation}) => (
