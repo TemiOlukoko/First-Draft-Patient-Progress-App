@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
 import PlaceHolder from './PP/Components/Pages/PlaceHolder';
 
+// kate 
 const Stack = createStackNavigator()
 
 const HomeScreen = ({navigation}) => (
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     marginBottom: 20,
     borderBottomColor: '#000000',
-    borderBottomWidth: 1, 
+    borderBottomWidth: 1,
   },
   TextInput: {
     alignSelf: 'stretch',
