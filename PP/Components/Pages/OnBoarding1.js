@@ -2,6 +2,11 @@ import React from 'react';
 import { Image, StyleSheet, Text, View, Button } from 'react-native';
 import logo from '../Pages/assets/logo.png';
 
+//import OnBoarding2 from './OnBoarding2';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createStackNavigator } from '@react-navigation/stack';
+
+//const Stack = createStackNavigator()
 
 export default function OnBoardingOne() {
   return (
@@ -16,13 +21,12 @@ export default function OnBoardingOne() {
         <View style={styles.circle}></View>
         <View style={styles.circle}></View>
       </View>
-
+      
       <View style={styles.btn}>
-        <Button title="Next" color='#58ACA8' />
+        <Button title="Next" color='#58ACA8'/>
       </View>
 
     </View>
-
 
   );
 }
