@@ -13,7 +13,7 @@
     "@react-navigation/drawer": "^5.4.1",
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",
-    "expo": "~37.0.3",
+    "expo": "^37.0.7",
     "faker": "^4.1.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
@@ -25,8 +25,8 @@
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
-    "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "@babel/core": "^7.8.6",
+    "babel-preset-expo": "~8.1.0"
   },
   "private": true
 }
