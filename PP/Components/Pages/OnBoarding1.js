@@ -1,6 +1,10 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, Button } from 'react-native';
+import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import logo from '../Pages/assets/logo.png';
+
+// importing fonts 
+import { useFonts } from '@use-expo/font';
+import { AppLoading } from 'expo';
 
 //import OnBoarding2 from './OnBoarding2';
 //import { NavigationContainer } from '@react-navigation/native';
@@ -9,6 +13,18 @@ import logo from '../Pages/assets/logo.png';
 //const Stack = createStackNavigator()
 
 export default function OnBoardingOne() {
+
+// fonts load
+let [fontsLoaded] = useFonts({
+  'Regular': require('./assets/reg.ttf'),
+  'Bold': require('./assets/bold.ttf')
+  });
+
+// check if fonts are loaded
+if (!fontsLoaded) {
+  return <AppLoading />;
+  } else {
+
   return (
 
     <View style={styles.container}>
@@ -23,13 +39,20 @@ export default function OnBoardingOne() {
       </View>
       
       <View style={styles.btn}>
-        <Button title="Next" color='#58ACA8'/>
+        {/* <Button title="Next" color='#58ACA8' textStyle={{fontFamily: 'Bold'}}/> */}
+
+        {/* to be used as button to get more styling control */}
+        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}}>
+          <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
+        </TouchableOpacity>
+
       </View>
 
     </View>
 
   );
 }
+};
 
 
 
@@ -47,11 +70,13 @@ const styles = StyleSheet.create({
   textBox: {
     textAlign: 'center',
     fontSize: 18,
+    fontFamily: 'Regular'
   },
 
   headings: {
     fontSize: 23,
     paddingBottom: 6,
+    fontFamily: 'Bold'
 },
 
 circle: {
