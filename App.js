@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
-import PlaceHolder from './PP/Components/Pages/PlaceHolder';
-
+//import PlaceHolder from './PP/Components/Pages/PlaceHolder';
+import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
 
 const Stack = createStackNavigator()
 
@@ -46,7 +46,7 @@ export default class App extends React.Component {
              <Stack.Navigator>
                <Stack.Screen options={{title:'Patient Progress Home Screen'}}  name="Home" component = {HomeScreen}/>
                <Stack.Screen name="Sign in" component = {SettingScreen}/>
-               <Stack.Screen name="Boarding 1" component = {PlaceHolder}/>
+               <Stack.Screen name="Boarding 1" component = {OnBoarding1}/> 
              </Stack.Navigator>
            </NavigationContainer>
         );

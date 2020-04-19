@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, Button } from 'react-native';
-import logo from './assets/logo.png';
+import logo from '../Pages/assets/logo.png';
 
 
 export default function OnBoardingOne() {
