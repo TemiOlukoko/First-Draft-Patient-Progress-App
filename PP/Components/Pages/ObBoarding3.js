@@ -2,8 +2,23 @@ import React from 'react';
 import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import logo from './assets/logo.png';
 
+// importing fonts 
+import { useFonts } from '@use-expo/font';
+import { AppLoading } from 'expo';
 
 export default function OnBoardingThree() {
+
+// fonts load
+let [fontsLoaded] = useFonts({
+  'Regular': require('./assets/reg.ttf'),
+  'Bold': require('./assets/bold.ttf')
+  });
+
+// check if fonts are loaded
+if (!fontsLoaded) {
+  return <AppLoading />;
+  } else {
+
   return (
 
     <View style={styles.container}>
@@ -17,15 +32,18 @@ export default function OnBoardingThree() {
         <View style={styles.circleFirst}></View>
       </View>
 
-      <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=> {alert('Redirecting to sign up page')}}>
+      <View style={styles.btn}>
+        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={pressHandler2}>
           <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
         </TouchableOpacity>
+      </View>
 
     </View>
 
 
   );
 }
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -41,11 +59,13 @@ const styles = StyleSheet.create({
     textBox: {
       textAlign: 'center',
       fontSize: 18,
+      fontFamily: 'Regular'
     },
 
     headings: {
       fontSize: 23,
       paddingBottom: 6,
+      fontFamily: 'Bold'
   },
 
   circle: {
