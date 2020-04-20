@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, Button } from 'react-native';
+import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import logo from './assets/logo.png';
 
 
@@ -17,9 +17,9 @@ export default function OnBoardingThree() {
         <View style={styles.circleFirst}></View>
       </View>
 
-      <View style={styles.btn}>
-        <Button title="Next" color='#58ACA8' />
-      </View>
+      <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=> {alert('Redirecting to sign up page')}}>
+          <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
+        </TouchableOpacity>
 
     </View>
 

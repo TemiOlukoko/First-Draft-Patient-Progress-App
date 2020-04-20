@@ -1,14 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 
-
+//Importing navigation components
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
 
+//Importing different screens
 import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
 import OnBoarding2 from './PP/Components/Pages/OnBoarding2';
 import OnBoarding3 from './PP/Components/Pages/ObBoarding3';
+
+//Trying to import logo
+//import logo from '../Pages/assets/logo.png';
 
 const Stack = createStackNavigator()
 
@@ -17,18 +21,15 @@ const HomeScreen = ({navigation}) => (
     alignItems:'center',
     justifyContent:'center',}}>
       <Text style = {styles.header}>Patient Progress</Text>
-      <Button title="Sign in"
-      onPress={()=>navigation.navigate
-        ('Sign in')}
-      />
-      <TouchableOpacity style={{padding:10, margin:10, backgroundColor: '#00BFA5'}}onPress={()=>{alert("Getting Started..")}}>
+      <Button title="Sign in" color = '#00BFA5' onPress={()=>navigation.navigate ('Sign in')}/>
+      <TouchableOpacity style={{padding:10, margin:10, backgroundColor: '#00BFA5'}}onPress={()=>navigation.navigate('Welcome-1')}>
         <Text style = {{color: 'white'}}>Get Started </Text>
       </TouchableOpacity>
   </View>
 )
 const SettingScreen = ({navigation}) => (
   <View style= {styles.container}>
-      <Text style = {styles.header}>Sign in</Text>
+      <Text style = {styles.headings}>Sign in</Text>
       <TextInput style = {styles.TextInput} placeholder="NHS number:"
       underlineColorAndroid={'transparent'}/>
       <TextInput style = {styles.TextInput} placeholder="Password:"
@@ -36,9 +37,6 @@ const SettingScreen = ({navigation}) => (
       <TouchableOpacity style={{padding:10, margin:1, backgroundColor: '#00BFA5'}}onPress={()=>{alert("Signing in..")}}>
           <Text style = {{color: 'white'}}>Sign in</Text>
       </TouchableOpacity>
-      <Button title="Boarding Page"
-      onPress={()=>navigation.navigate('Welcome')} //navigate to first onboarding page
-      />
   </View>
 )
 
@@ -49,9 +47,9 @@ export default class App extends React.Component {
              <Stack.Navigator>
                <Stack.Screen options={{title:'Patient Progress Home Screen'}}  name="Home" component = {HomeScreen}/>
                <Stack.Screen name="Sign in" component = {SettingScreen}/>
-               <Stack.Screen name="Welcome" component = {OnBoarding1}/>
-               <Stack.Screen name="OnBoarding2" component ={OnBoarding2}/>
-               <Stack.Screen name="Welcome2" component ={OnBoarding3}/> 
+               <Stack.Screen name="Welcome-1" component = {OnBoarding1}/>
+               <Stack.Screen name="Welcome-2" component ={OnBoarding2}/>
+               <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
              </Stack.Navigator>
            </NavigationContainer>
         );
