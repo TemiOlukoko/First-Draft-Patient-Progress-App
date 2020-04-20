@@ -36,6 +36,7 @@ export default function faqPage() {
 
 <View>
 
+{/* THIS IS THE UPPER MENU CODE */}
 <View style={styles.upperMenu}>
   <View style={styles.lineFlex}>
     <View style={styles.line}></View>
@@ -44,10 +45,8 @@ export default function faqPage() {
   </View>
 
   <View style={styles.title}><Text style={{fontSize: 23, fontFamily: 'Bold'}}>FAQ</Text></View>
-
 </View>
-
-
+{/* THIS IS THE UPPER MENU CODE */}
 
 <View style={styles.container}>
   <Text style={styles.bodyTxtBold}>1. Who is at a risk of developing severe illness?</Text>
