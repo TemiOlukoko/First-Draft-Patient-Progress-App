@@ -1,15 +1,16 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
-import logo from './assets/logo.png';
+import logo from '../Pages/assets/logo.png';
 
 // importing fonts 
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
 export default function OnBoardingTwo({navigation}) {
-  const pressHandler2 = () => {
-    navigation.navigate('Welcome-3')
-  }  
+
+const pressHandler2 = () => {
+  navigation.navigate('Welcome-3')
+}  
 
 // fonts load
 let [fontsLoaded] = useFonts({

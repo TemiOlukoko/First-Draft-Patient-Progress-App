@@ -33,7 +33,7 @@ if (!fontsLoaded) {
       </View>
 
       <View style={styles.btn}>
-        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={pressHandler2}>
+        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=>{alert('Sign up')}}>
           <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
         </TouchableOpacity>
       </View>
