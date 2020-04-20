@@ -1,9 +1,12 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, Button } from 'react-native';
+import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import logo from './assets/logo.png';
 
 
-export default function OnBoardingTwo() {
+export default function OnBoardingTwo({navigation}) {
+  const pressHandler2 = () => {
+    navigation.navigate('Welcome-3')
+  }  
   return (
 
     <View style={styles.container}>
@@ -17,9 +20,9 @@ export default function OnBoardingTwo() {
         <View style={styles.circle}></View>
       </View>
 
-      <View style={styles.btn}>
-        <Button title="Next" color='#58ACA8' />
-      </View>
+      <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={pressHandler2}>
+          <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
+        </TouchableOpacity>
 
     </View>
 
