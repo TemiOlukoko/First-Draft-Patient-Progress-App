@@ -4,8 +4,10 @@ import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
-import PlaceHolder from './PP/Components/Pages/PlaceHolder';
 
+import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
+import OnBoarding2 from './PP/Components/Pages/OnBoarding2';
+import OnBoarding3 from './PP/Components/Pages/ObBoarding3';
 
 const Stack = createStackNavigator()
 
@@ -34,7 +36,7 @@ const SettingScreen = ({navigation}) => (
           <Text style = {{color: 'white'}}>Sign in</Text>
       </TouchableOpacity>
       <Button title="Boarding Page"
-      onPress={()=>navigation.navigate('Boarding 1')}
+      onPress={()=>navigation.navigate('Welcome')} //navigate to first onboarding page
       />
   </View>
 )
@@ -46,7 +48,9 @@ export default class App extends React.Component {
              <Stack.Navigator>
                <Stack.Screen options={{title:'Patient Progress Home Screen'}}  name="Home" component = {HomeScreen}/>
                <Stack.Screen name="Sign in" component = {SettingScreen}/>
-               <Stack.Screen name="Boarding 1" component = {PlaceHolder}/>
+               <Stack.Screen name="Welcome" component = {OnBoarding1}/>
+               <Stack.Screen name="OnBoarding2" component ={OnBoarding2}/>
+               <Stack.Screen name="Welcome2" component ={OnBoarding3}/> 
              </Stack.Navigator>
            </NavigationContainer>
         );
