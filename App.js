@@ -15,16 +15,20 @@ import OnBoarding3 from './PP/Components/Pages/ObBoarding3';
 import CustomButton from './PP/Components/Pages/CustomButton';
 
 //Import logo
-import logo from './PP/Components/Pages/assets/logo.png';
+import big from './PP/Components/Pages/assets/big-logo.png';
+import test from './PP/Components/Pages/assets/test-logo.png';
+import mini from './PP/Components/Pages/assets/mini-logo.png';
 
 const Stack = createStackNavigator()
 
+//Landing page
 const HomeScreen = ({navigation}) => (
   <View style={{flex:1,
     alignItems:'center',
-    justifyContent:'center',}}>
-      <Text style = {styles.header}>Patient Progress</Text>
-      <CustomButton text="Sign in" onPress={()=>navigation.navigate ('Sign in')}/>
+    justifyContent:'center',
+    backgroundColor: '#FFFFFF'}}>
+      <Image source={big} style={{ width: 280, marginBottom: 70, height: 160, }}/>
+      <CustomButton text="    Sign in    " onPress={()=>navigation.navigate ('Sign in')}/>
       <CustomButton text="Get Started" onPress={()=>navigation.navigate('Welcome-1')}>
         </CustomButton>
   </View>
@@ -39,10 +43,11 @@ const SettingScreen = ({navigation}) => (
       <TextInput style = {styles.TextInput} 
       placeholder="Password:" secureTextEntry= {true} 
       underlineColorAndroid={'transparent'}
-      placeholderTextColor='#000000'/>
+      placeholderTextColor='#000000' 
+      />
       <CustomButton text="Sign in" onPress={()=>{alert("Signing in..")}}>
         </CustomButton>
-      <Image source={logo} style={{ width: 100, marginTop: 240, marginRight: 90, }}/>
+      <Image source={test} style={{ width: 280, height: 130, marginTop: 240, marginRight: 20,}}/>
   </View>
 )
 export default class App extends React.Component {
@@ -70,47 +75,24 @@ const styles = StyleSheet.create({
       paddingLeft: 60,
       paddingRight: 60,
   },
-  header: {
+  headings: {
     fontSize: 20,
     color: '#000000',
-    paddingBottom: 40,
-    marginBottom: 20,
-    justifyContent: 'flex-start',
+    alignSelf: 'flex-end',
     borderBottomColor: 'transparent',
     borderBottomWidth: 1,
+    paddingBottom: 25,
+    paddingTop: 10,
   },
   TextInput: {
     alignSelf: 'stretch',
     height: 40,
-    marginBottom: 30,
+    marginBottom: 3,
+    marginTop: 10,
     color: '#000000',
-    borderBottomColor: '#BDBDBD',
-    borderBottomWidth: 1,
-  },
-  circle: {
-    width: 9,
-    height: 9,
-    borderRadius: 100/2,
-    backgroundColor: '#C4C4C4',
-    margin: 3,
-    marginTop: 45,
-  },
-  
-  circleFirst: {
-    width: 9,
-    height: 9,
-    borderRadius: 100/2,
-    backgroundColor: '#58ACA8',
-    margin: 3,
-    marginTop: 45,
-  },
-  
-  dots: {
-    flexDirection: 'row',
-  },
-  
-  btn: {
-    marginTop: 20
+    borderWidth: 1,
+    borderColor: '#BDBDBD',
+    paddingLeft: 5,
+    paddingBottom: 5,
   }
-  
 });
