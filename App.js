@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image} from 'react-native';
 
 //Importing navigation components
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,8 +11,11 @@ import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
 import OnBoarding2 from './PP/Components/Pages/OnBoarding2';
 import OnBoarding3 from './PP/Components/Pages/ObBoarding3';
 
-//Trying to import logo
-//import logo from '../Pages/assets/logo.png';
+//Trying to import button
+import CustomButton from './PP/Components/Pages/CustomButton';
+
+//Import logo
+import logo from './PP/Components/Pages/assets/logo.png';
 
 const Stack = createStackNavigator()
 
@@ -21,31 +24,33 @@ const HomeScreen = ({navigation}) => (
     alignItems:'center',
     justifyContent:'center',}}>
       <Text style = {styles.header}>Patient Progress</Text>
-      <Button title="Sign in" color = '#00BFA5' onPress={()=>navigation.navigate ('Sign in')}/>
-      <TouchableOpacity style={{padding:10, margin:10, backgroundColor: '#00BFA5'}}onPress={()=>navigation.navigate('Welcome-1')}>
-        <Text style = {{color: 'white'}}>Get Started </Text>
-      </TouchableOpacity>
+      <CustomButton text="Sign in" onPress={()=>navigation.navigate ('Sign in')}/>
+      <CustomButton text="Get Started" onPress={()=>navigation.navigate('Welcome-1')}>
+        </CustomButton>
   </View>
 )
 const SettingScreen = ({navigation}) => (
   <View style= {styles.container}>
       <Text style = {styles.headings}>Sign in</Text>
-      <TextInput style = {styles.TextInput} placeholder="NHS number:"
-      underlineColorAndroid={'transparent'}/>
-      <TextInput style = {styles.TextInput} placeholder="Password:"
-      secureTextEntry= {true} underlineColorAndroid={'transparent'}/>
-      <TouchableOpacity style={{padding:10, margin:1, backgroundColor: '#00BFA5'}}onPress={()=>{alert("Signing in..")}}>
-          <Text style = {{color: 'white'}}>Sign in</Text>
-      </TouchableOpacity>
+      <TextInput style = {styles.TextInput} 
+      underlineColorAndroid='transparent' 
+      placeholder="NHS number:"
+      placeholderTextColor='#000000'/>
+      <TextInput style = {styles.TextInput} 
+      placeholder="Password:" secureTextEntry= {true} 
+      underlineColorAndroid={'transparent'}
+      placeholderTextColor='#000000'/>
+      <CustomButton text="Sign in" onPress={()=>{alert("Signing in..")}}>
+        </CustomButton>
+      <Image source={logo} style={{ width: 100, marginTop: 240, marginRight: 90, }}/>
   </View>
 )
-
 export default class App extends React.Component {
     render() {
         return (
            <NavigationContainer>
              <Stack.Navigator>
-               <Stack.Screen options={{title:'Patient Progress Home Screen'}}  name="Home" component = {HomeScreen}/>
+               <Stack.Screen options={{title:'Home'}}  name="Home" component = {HomeScreen}/>
                <Stack.Screen name="Sign in" component = {SettingScreen}/>
                <Stack.Screen name="Welcome-1" component = {OnBoarding1}/>
                <Stack.Screen name="Welcome-2" component ={OnBoarding2}/>
@@ -68,9 +73,10 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     color: '#000000',
-    paddingBottom: 5,
+    paddingBottom: 40,
     marginBottom: 20,
-    borderBottomColor: '#000000',
+    justifyContent: 'flex-start',
+    borderBottomColor: 'transparent',
     borderBottomWidth: 1,
   },
   TextInput: {
@@ -78,14 +84,33 @@ const styles = StyleSheet.create({
     height: 40,
     marginBottom: 30,
     color: '#000000',
-    borderBottomColor: '#000000',
+    borderBottomColor: '#BDBDBD',
     borderBottomWidth: 1,
   },
-  Button: {
-    alignSelf: 'stretch',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#000000',
-    marginTop: 30,
+  circle: {
+    width: 9,
+    height: 9,
+    borderRadius: 100/2,
+    backgroundColor: '#C4C4C4',
+    margin: 3,
+    marginTop: 45,
+  },
+  
+  circleFirst: {
+    width: 9,
+    height: 9,
+    borderRadius: 100/2,
+    backgroundColor: '#58ACA8',
+    margin: 3,
+    marginTop: 45,
+  },
+  
+  dots: {
+    flexDirection: 'row',
+  },
+  
+  btn: {
+    marginTop: 20
   }
+  
 });
