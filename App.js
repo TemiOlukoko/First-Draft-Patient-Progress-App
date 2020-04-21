@@ -10,13 +10,12 @@ import { TextInput } from 'react-native-gesture-handler';
 import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
 import OnBoarding2 from './PP/Components/Pages/OnBoarding2';
 import OnBoarding3 from './PP/Components/Pages/OnBoarding3';
-import MentalHealth from './PP/Components/Pages/MentalHealth';
+import Mental from './PP/Components/Pages/Mental';
 
 //Trying to import button
 import CustomButton from './PP/Components/Pages/CustomButton';
 
 //Import logo
-import logo from './PP/Components/Pages/assets/logo.png';
 import bigger from './PP/Components/Pages/assets/bigger-logo.png';
 import smaller from './PP/Components/Pages/assets/smaller-logo.png';
 
@@ -28,7 +27,7 @@ const HomeScreen = ({navigation}) => (
     alignItems:'center',
     justifyContent:'center',
     backgroundColor: '#FFFFFF'}}>
-      <Image source={bigger} style={{ width: 280, marginBottom: 70, height: 160, }}/>
+      <Image source={bigger} style={{ width: 350, marginBottom: 70, height: 160, }}/>
       <CustomButton text="    Sign in    " onPress={()=>navigation.navigate ('Sign in')}/>
       <CustomButton text="Get Started" onPress={()=>navigation.navigate('Welcome-1')}>
         </CustomButton>
@@ -61,7 +60,7 @@ export default class App extends React.Component {
                <Stack.Screen name="Welcome-1" component = {OnBoarding1}/>
                <Stack.Screen name="Welcome-2" component ={OnBoarding2}/>
                <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
-               <Stack.Screen name="Mental Health" component={MentalHealth}/>
+               <Stack.Screen name="Mental Health" component={Mental}/>
              </Stack.Navigator>
            </NavigationContainer>
         );

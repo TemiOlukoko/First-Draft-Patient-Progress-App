@@ -7,8 +7,8 @@ import { AppLoading } from 'expo';
 export default function Mental() {
 
     let [fontsLoaded] = useFonts({
-        'Bold': require('./PP/Components/Pages/assets/fonts/Montserrat-Bold.ttf'),
-        'semiBold': require('./PP/Components/Pages/assets/fonts/Montserrat-SemiBold.ttf')
+        'Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+        'semiBold': require('./assets/fonts/Montserrat-SemiBold.ttf')
     });
 
     if (!fontsLoaded) {
