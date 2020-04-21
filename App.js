@@ -9,7 +9,7 @@ import { TextInput } from 'react-native-gesture-handler';
 //Importing different screens
 import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
 import OnBoarding2 from './PP/Components/Pages/OnBoarding2';
-import OnBoarding3 from './PP/Components/Pages/ObBoarding3';
+import OnBoarding3 from './PP/Components/Pages/OnBoarding3';
 import MentalHealth from './PP/Components/Pages/MentalHealth';
 
 //Trying to import button
