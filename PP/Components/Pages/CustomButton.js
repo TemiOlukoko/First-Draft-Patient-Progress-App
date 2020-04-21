@@ -12,10 +12,10 @@ export default function CustomButton({text, onPress}) {
 }
 const styles = StyleSheet.create({
     button: {
-        margin: 5,
+        margin: 10,
         borderRadius: 40,
         paddingVertical: 5,
-        paddingHorizontal: 70,
+        paddingHorizontal: 60,
         backgroundColor: '#00BFA5'
     },
     buttonText: {

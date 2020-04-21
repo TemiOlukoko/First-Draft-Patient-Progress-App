@@ -6,11 +6,13 @@ import logo from '../Pages/assets/logo.png';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
-export default function OnBoardingOne({navigation}) {
+//import OnBoarding2 from './OnBoarding2';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createStackNavigator } from '@react-navigation/stack';
 
-const pressHandler = () => {
-  navigation.navigate('Welcome-2')
-}  
+//const Stack = createStackNavigator()
+
+export default function OnBoardingOne() {
 
 // fonts load
 let [fontsLoaded] = useFonts({
@@ -40,7 +42,7 @@ if (!fontsLoaded) {
         {/* <Button title="Next" color='#58ACA8' textStyle={{fontFamily: 'Bold'}}/> */}
 
         {/* to be used as button to get more styling control */}
-        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={pressHandler}>
+        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}}>
           <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
         </TouchableOpacity>
 

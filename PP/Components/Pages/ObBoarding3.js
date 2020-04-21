@@ -1,11 +1,9 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View, Button } from 'react-native';
 import logo from './assets/logo.png';
 
-// importing fonts 
-import { useFonts } from '@use-expo/font';
-import { AppLoading } from 'expo';
 
+<<<<<<< HEAD
 export default function OnBoardingThree({navigation}) {
   const pressHandler3 = () => {
     navigation.navigate('Mental Health')
@@ -22,6 +20,9 @@ if (!fontsLoaded) {
   return <AppLoading />;
   } else {
 
+=======
+export default function OnBoardingThree() {
+>>>>>>> ef15f9b9e1efea8a9f96dff50d720c93fc6ce54c
   return (
 
     <View style={styles.container}>
@@ -36,9 +37,13 @@ if (!fontsLoaded) {
       </View>
 
       <View style={styles.btn}>
+<<<<<<< HEAD
         <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={pressHandler3}>
           <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
         </TouchableOpacity>
+=======
+        <Button title="Next" color='#58ACA8' />
+>>>>>>> ef15f9b9e1efea8a9f96dff50d720c93fc6ce54c
       </View>
 
     </View>
@@ -46,7 +51,6 @@ if (!fontsLoaded) {
 
   );
 }
-};
 
 const styles = StyleSheet.create({
     container: {
@@ -62,13 +66,11 @@ const styles = StyleSheet.create({
     textBox: {
       textAlign: 'center',
       fontSize: 18,
-      fontFamily: 'Regular'
     },
 
     headings: {
       fontSize: 23,
       paddingBottom: 6,
-      fontFamily: 'Bold'
   },
 
   circle: {
