@@ -6,7 +6,10 @@ import logo from './assets/logo.png';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
-export default function OnBoardingThree() {
+export default function OnBoardingThree({navigation}) {
+  const pressHandler3 = () => {
+    navigation.navigate('Mental Health')
+  }  
 
 // fonts load
 let [fontsLoaded] = useFonts({
@@ -33,7 +36,7 @@ if (!fontsLoaded) {
       </View>
 
       <View style={styles.btn}>
-        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=>{alert('Sign up')}}>
+        <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={pressHandler3}>
           <Text style={{fontSize:18, fontFamily: 'Bold', color: '#58ACA8'}}>Next</Text>
         </TouchableOpacity>
       </View>

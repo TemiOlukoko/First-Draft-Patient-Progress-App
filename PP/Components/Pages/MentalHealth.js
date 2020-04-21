@@ -5,7 +5,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-export default class PlaceHolder extends React.Component {
+export default class MentalHealth extends React.Component {
     render() {
         return (
           <View style={styles.container}>
@@ -22,3 +22,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+    
