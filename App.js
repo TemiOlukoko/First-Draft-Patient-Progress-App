@@ -47,7 +47,11 @@ const SettingScreen = ({navigation}) => (
       />
       <CustomButton text="Sign in" onPress={()=>{alert("Signing in..")}}>
         </CustomButton>
-      <Image source={smaller} style={{ width: 280, height: 130, marginTop: 240, marginRight: 20,}}/>
+
+      <View style={{ width: 90, marginRight: 77 }}>
+        <Image source={smaller} style={{ width: 180, marginTop: 240}}/>
+      </View>
+
   </View>
 )
 export default class App extends React.Component {

@@ -28,7 +28,7 @@ const HomeScreen = ({navigation}) => (
     alignItems:'center',
     justifyContent:'center',
     backgroundColor: '#FFFFFF'}}>
-      <Image source={big} style={{ width: 280, marginBottom: 70, height: 160, }}/>
+      <Image source={big} style={{ width: 200, marginBottom: 70, height: 160, }}/>
       <CustomButton text="    Sign in    " onPress={()=>navigation.navigate ('Sign in')}/>
       <CustomButton text="Get Started" onPress={()=>navigation.navigate('Welcome-1')}>
         </CustomButton>
