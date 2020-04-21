@@ -18,6 +18,7 @@ import CustomButton from './PP/Components/Pages/CustomButton';
 //Import logo
 import big from './PP/Components/Pages/assets/big-logo.png';
 import test from './PP/Components/Pages/assets/test-logo.png';
+import mini from './PP/Components/Pages/assets/mini-logo.png';
 
 const Stack = createStackNavigator()
 
@@ -27,7 +28,7 @@ const HomeScreen = ({navigation}) => (
     alignItems:'center',
     justifyContent:'center',
     backgroundColor: '#FFFFFF'}}>
-      <Image source={test} style={{ width: 280, marginBottom: 70, height: 160, }}/>
+      <Image source={big} style={{ width: 280, marginBottom: 70, height: 160, }}/>
       <CustomButton text="    Sign in    " onPress={()=>navigation.navigate ('Sign in')}/>
       <CustomButton text="Get Started" onPress={()=>navigation.navigate('Welcome-1')}>
         </CustomButton>
