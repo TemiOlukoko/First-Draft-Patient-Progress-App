@@ -1,84 +1,67 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image} from 'react-native';
 
-
+//Importing navigation components
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
 
+//Importing different screens
 import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
 import OnBoarding2 from './PP/Components/Pages/OnBoarding2';
 import OnBoarding3 from './PP/Components/Pages/ObBoarding3';
 import MentalHealth from './PP/Components/Pages/MentalHealth';
 
-<<<<<<< HEAD
 //Trying to import button
 import CustomButton from './PP/Components/Pages/CustomButton';
 
 //Import logo
-import big from './PP/Components/Pages/assets/big-logo.png';
-import test from './PP/Components/Pages/assets/test-logo.png';
+import logo from './PP/Components/Pages/assets/logo.png';
+import bigger from './PP/Components/Pages/assets/bigger-logo.png';
+import smaller from './PP/Components/Pages/assets/smaller-logo.png';
 
-=======
->>>>>>> ef15f9b9e1efea8a9f96dff50d720c93fc6ce54c
 const Stack = createStackNavigator()
 
+//Landing page
 const HomeScreen = ({navigation}) => (
   <View style={{flex:1,
     alignItems:'center',
-<<<<<<< HEAD
     justifyContent:'center',
     backgroundColor: '#FFFFFF'}}>
-      <Image source={test} style={{ width: 280, marginBottom: 70, height: 160, }}/>
+      <Image source={bigger} style={{ width: 280, marginBottom: 70, height: 160, }}/>
       <CustomButton text="    Sign in    " onPress={()=>navigation.navigate ('Sign in')}/>
       <CustomButton text="Get Started" onPress={()=>navigation.navigate('Welcome-1')}>
         </CustomButton>
-=======
-    justifyContent:'center',}}>
-      <Text style = {styles.header}>Patient Progress</Text>
-      <Button title="Sign in"
-      onPress={()=>navigation.navigate
-        ('Sign in')}
-      />
-      <TouchableOpacity style={{padding:10, margin:10, backgroundColor: '#00BFA5'}}onPress={()=>{alert("Getting Started..")}}>
-        <Text style = {{color: 'white'}}>Get Started </Text>
-      </TouchableOpacity>
->>>>>>> ef15f9b9e1efea8a9f96dff50d720c93fc6ce54c
   </View>
 )
 const SettingScreen = ({navigation}) => (
   <View style= {styles.container}>
-      <Text style = {styles.header}>Sign in</Text>
-      <TextInput style = {styles.TextInput} placeholder="NHS number:"
-      underlineColorAndroid={'transparent'}/>
-      <TextInput style = {styles.TextInput} placeholder="Password:"
-      secureTextEntry= {true} underlineColorAndroid={'transparent'}/>
-      <TouchableOpacity style={{padding:10, margin:1, backgroundColor: '#00BFA5'}}onPress={()=>{alert("Signing in..")}}>
-          <Text style = {{color: 'white'}}>Sign in</Text>
-      </TouchableOpacity>
-      <Button title="Boarding Page"
-      onPress={()=>navigation.navigate('Welcome')} //navigate to first onboarding page
+      <Text style = {styles.headings}>Sign in</Text>
+      <TextInput style = {styles.TextInput} 
+      underlineColorAndroid='transparent' 
+      placeholder="NHS number:"
+      placeholderTextColor='#000000'/>
+      <TextInput style = {styles.TextInput} 
+      placeholder="Password:" secureTextEntry= {true} 
+      underlineColorAndroid={'transparent'}
+      placeholderTextColor='#000000' 
       />
+      <CustomButton text="Sign in" onPress={()=>{alert("Signing in..")}}>
+        </CustomButton>
+      <Image source={smaller} style={{ width: 280, height: 130, marginTop: 240, marginRight: 20,}}/>
   </View>
 )
-
 export default class App extends React.Component {
     render() {
         return (
            <NavigationContainer>
              <Stack.Navigator>
-               <Stack.Screen options={{title:'Patient Progress Home Screen'}}  name="Home" component = {HomeScreen}/>
+               <Stack.Screen options={{title:'Home'}}  name="Home" component = {HomeScreen}/>
                <Stack.Screen name="Sign in" component = {SettingScreen}/>
-<<<<<<< HEAD
                <Stack.Screen name="Welcome-1" component = {OnBoarding1}/>
                <Stack.Screen name="Welcome-2" component ={OnBoarding2}/>
                <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
                <Stack.Screen name="Mental Health" component={MentalHealth}/>
-=======
-               <Stack.Screen name="Welcome" component = {OnBoarding1}/>
-               <Stack.Screen name="OnBoarding2" component ={OnBoarding2}/>
-               <Stack.Screen name="Welcome2" component ={OnBoarding3}/> 
->>>>>>> ef15f9b9e1efea8a9f96dff50d720c93fc6ce54c
              </Stack.Navigator>
            </NavigationContainer>
         );
@@ -94,27 +77,25 @@ const styles = StyleSheet.create({
       paddingLeft: 60,
       paddingRight: 60,
   },
-  header: {
+  headings: {
     fontSize: 20,
     color: '#000000',
-    paddingBottom: 5,
-    marginBottom: 20,
-    borderBottomColor: '#000000',
+    alignSelf: 'flex-end',
+    borderBottomColor: 'transparent',
     borderBottomWidth: 1,
+    paddingBottom: 25,
+    paddingTop: 10,
   },
   TextInput: {
     alignSelf: 'stretch',
     height: 40,
-    marginBottom: 30,
+    marginBottom: 3,
+    marginTop: 10,
     color: '#000000',
-    borderBottomColor: '#000000',
-    borderBottomWidth: 1,
-  },
-  Button: {
-    alignSelf: 'stretch',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#000000',
-    marginTop: 30,
+    borderWidth: 1,
+    borderColor: '#BDBDBD',
+    paddingLeft: 5,
+    paddingBottom: 5,
   }
 });
+

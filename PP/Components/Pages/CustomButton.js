@@ -12,10 +12,10 @@ export default function CustomButton({text, onPress}) {
 }
 const styles = StyleSheet.create({
     button: {
-        margin: 10,
+        margin: 5,
         borderRadius: 40,
         paddingVertical: 5,
-        paddingHorizontal: 60,
+        paddingHorizontal: 70,
         backgroundColor: '#00BFA5'
     },
     buttonText: {
@@ -25,4 +25,3 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 })
-  
