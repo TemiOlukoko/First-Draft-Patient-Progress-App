@@ -27,7 +27,7 @@ export default function Mental() {
                         <View style={styles.line}></View>
                     </View>
 
-                    <View style={styles.title}><Text style={{ fontSize: 23, fontFamily: 'semiBold' }}>Mental Health</Text></View>
+                    <View style={styles.title}><Text style={{ fontSize: 20, fontFamily: 'semiBold' }}>Mental Health</Text></View>
                 </View>
                 {/* THIS IS THE UPPER MENU CODE */}
 
@@ -35,15 +35,15 @@ export default function Mental() {
                 <View style={styles.container}>
                     <View style={styles.rectColumn}>
                         <View style={styles.rect}>
-                            <Text style={styles.stress}>STRESS</Text>
+                            <Text style={styles.anxiety}>ANXIETY</Text>
                         </View>
                         <View style={styles.rect3}>
-                            <Text style={styles.depression}>DEPRESSION</Text>
+                            <Text style={styles.stress}>STRESS</Text>
                         </View>
                     </View>
                     <View style={styles.rectColumnFiller}>
                         <View style={styles.rect2}>
-                            <Text style={styles.anxiety}>ANXIETY</Text>
+                            <Text style={styles.depression}>DEPRESSION</Text>
                         </View>
                     </View>
                 </View>
@@ -84,52 +84,73 @@ const styles = StyleSheet.create({
 
     title: {
         marginTop: 25,
-        marginLeft: 260
+        marginLeft: 210
     },
 
     container: {
         flex: 1
     },
+    //Anxiety
     rect: {
-        width: 375,
-        height: 190,
-        backgroundColor: "rgba(231,240,195,1)"
-    },
-    stress: {
-        color: "rgba(0,0,0,1)",
-        fontSize: 16,
-        fontFamily: 'Bold',
-        marginTop: 87,
-        marginLeft: 156
-    },
-    rect3: {
-        width: 375,
-        height: 190,
-        backgroundColor: "rgba(243,234,192,1)",
-        marginTop: 206
-    },
-    depression: {
-        color: "rgba(0,0,0,1)",
-        fontSize: 16,
-        fontFamily: 'Bold',
-        marginTop: 87,
-        marginLeft: 137
-    },
-    rectColumn: {
-        width: 375,
-        marginTop: 113
-    },
-    rect2: {
-        width: 375,
-        height: 190,
-        backgroundColor: "rgba(164,212,174,1)"
+        width: 500,
+        height: 500,
+        backgroundColor: "rgba(231,240,195,1)", //
+        flex: 0.3,
+        marginBottom: -380,
+        marginTop: -25,
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignSelf:'center'
     },
     anxiety: {
         color: "rgba(0,0,0,1)",
         fontSize: 16,
         fontFamily: 'Bold',
-        marginTop: 87,
-        marginLeft: 151
+        marginTop: -5,
+        marginLeft: 225
+    },
+    //Stress
+    rect3: {
+        width: 500,
+        height: 50,
+        backgroundColor: "rgba(243,234,192,1)", //
+        marginTop: 15,
+        marginBottom: -260,
+        flex: 0.3,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignSelf: 'center'
+    },
+    stress: {
+        color: "rgba(0,0,0,1)",
+        fontSize: 16,
+        fontFamily: 'Bold',
+        marginTop: 50,
+        marginLeft: 230
+    },
+    rectColumn: {
+        width: 375,
+        marginTop: 113
+    },
+    //Depression
+    rect2: {
+        width: 500,
+        height: 50,
+        backgroundColor: "rgba(164,212,174,1)",
+        justifyContent: 'center',
+        marginTop: -50,
+        marginBottom: -520,
+        flex:0.3,
+        flexDirection: 'column',
+        alignSelf: 'center'
+    },
+    depression: {
+        color: "rgba(0,0,0,1)",
+        fontSize: 16,
+        fontFamily: 'Bold',
+        marginTop: 70,
+        marginLeft: 195,
+        marginBottom: 70
     },
     rectColumnFiller: {
         flex: 1,
