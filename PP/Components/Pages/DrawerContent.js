@@ -11,7 +11,7 @@ import {
     DrawerItem
 } from '@react-navigation/drawer';
 
-import userAvatar from './PP/Components/Pages/assets/user-avatar.png';
+import userAvatar from './PP/Components/Pages/assets/avatar.png';
 
 import { Ionicons } from '@expo/vector-icons';
 
@@ -82,7 +82,7 @@ export function DrawerContent(props) {
                         />
                     )}
                     label="Sign Out"
-                    onPress={() => { props.navigation.navigate('Login') }}
+                    onPress={() => { props.navigation.navigate('Sign in') }}
                 />
 
             </Drawer.Section>

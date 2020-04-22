@@ -11,7 +11,9 @@ import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
 import OnBoarding2 from './PP/Components/Pages/OnBoarding2';
 import OnBoarding3 from './PP/Components/Pages/OnBoarding3';
 import Mental from './PP/Components/Pages/Mental';
-
+import Feed from './PP/Components/Pages/Feed';
+import About from './PP/Components/Pages/About';
+import Settings from './PP/Components/Pages/Settings';
 //Trying to import button
 import CustomButton from './PP/Components/Pages/CustomButton';
 
@@ -65,6 +67,7 @@ export default class App extends React.Component {
                <Stack.Screen name="Welcome-2" component ={OnBoarding2}/>
                <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
                <Stack.Screen name="Mental Health" component={Mental}/>
+               <Stack.Screen name="Feed" component={Feed}/>
              </Stack.Navigator>
            </NavigationContainer>
         );

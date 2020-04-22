@@ -5,11 +5,11 @@ import {
   StyleSheet
 } from 'react-native';
 
-export default class MentalHealth extends React.Component {
+export default class PlaceHolder extends React.Component {
     render() {
         return (
           <View style={styles.container}>
-            <Text>Welcome</Text>
+            <Text>Settings</Text>
           </View>
         );
     }
