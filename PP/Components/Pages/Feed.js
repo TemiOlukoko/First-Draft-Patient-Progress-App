@@ -10,7 +10,7 @@ export default function Mental() {
   const [update, infoUpdate] = useState([
     {info: '    08/07/2020 at 12:45\n \n    Temperature of 38C.                ', key: '1'},
     {info: '10/07/2020 at 17:50\n \nOxygen therapy administered.   ', key: '2'},
-    {info: '14/07/2020 at 03:00\n \nBlood pressure 140/90 mm Hg.', key: '3'},
+    {info: '14/07/2020 at 03:00\n \nBlood pressure 140/90 mm Hg', key: '3'},
     {info: '18/07/2020 at 09:00\n \nWeight: 75 kg.                               ', key: '4'},
     {info: '23/07/2020 at 14:00\n \nGlucose levels: 7.8 mmol/L        ', key: '5'},
     {info: '26/07/2020 at 13:00\n \nHeart rate: 80 bpm.\n \n Normal heart rate.                       ', key: '6'},
@@ -49,7 +49,11 @@ export default function Mental() {
                       );
                     })}
                 </View>
-
+                <TouchableOpacity>
+                  <View style = {styles.button}>
+                  <Text style={styles.buttonText}>Request an update</Text>
+                  </View>
+                </TouchableOpacity>
               </View>
             </ScrollView>
         );
@@ -94,15 +98,35 @@ const styles = StyleSheet.create({
         //flex: 1,
         alignItems: 'center',
         backgroundColor: '#FFFFFF',
-        paddingTop: 30,
-        paddingHorizontal: 20
+        paddingTop: 70,
+        paddingHorizontal: 20,
+        paddingBottom: 150
         //justifyContent: 'center',
         //alignSelf: 'center'
     },
     item: {
       marginTop: 40,
-      padding: 25,
-      backgroundColor: '#B9F6CA',
-      fontSize: 18,
-    }
+      padding: 15,
+      backgroundColor: '#FFFFFF',
+      fontSize: 15,
+      marginLeft: -40,
+      borderWidth: 1,
+      borderRadius: 10,
+      borderColor: '#BDBDBD'
+      //shadowColor: 'black'
+    },
+    button: {
+      margin: 5,
+      borderRadius: 40,
+      paddingVertical: 5,
+      paddingHorizontal: 70,
+      marginBottom: 100,
+      backgroundColor: '#00BFA5'
+    },
+    buttonText: {
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize: 16,
+      textAlign: 'center'
+  }
 });
