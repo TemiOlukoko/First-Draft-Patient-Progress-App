@@ -1,160 +1,93 @@
 import React, { Component } from "react";
 import { Text, TouchableOpacity, View, StyleSheet, Image, CheckBox} from "react-native";
 import Dialog from "react-native-dialog";
-export default class DialogTester extends Component {
-  state = {
-    dialogVisible: false
-  };
- 
-  showDialog = () => {
-    this.setState({ dialogVisible: true });
-};
 
-handleAdd = () => {
-    this.setState({ dialogVisible: false});
-
-  };
-
-  handleCancel = () => {
-    this.setState({ dialogVisible: false});
-  };
- //Pop-up code
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={this.showDialog}>
-            <Text style={styles.text}>My relatives/friends</Text>
-            <Image style={styles.image} source={require('./assets/Vector.png')} />
-          </TouchableOpacity>
-        </View>
-
-        <View>
-          <Dialog.Container visible={this.state.dialogVisible}>
-            <Dialog.Title>New Patient</Dialog.Title>
-            <Dialog.Description>
-              NHS Number:
-            </Dialog.Description>
-            <Dialog.Input></Dialog.Input>
-            <Text>Notify me if my relative passes away</Text>
-            <CheckBox value={false}/>
-            <Dialog.Button label="Add" onPress={this.handleCancel} />
-            <Dialog.Button label="Cancel" onPress={this.handleDelete} />
-          </Dialog.Container>
-        </View>
-        
-  
-
-        
-        
-        <View style={styles.contact}>
-          <View style={styles.relatives}>
-            <Text style={styles.relativesFont}>Jane Doe</Text>
-          </View>    
-          <View style={styles.info}>
-              <Text style={styles.relativeInfo}>St.George&#39;s Hospital{"\n"}Last updated: 14th June 10:20</Text>
+export default class PlaceHolder extends React.Component {
+  render(){
+    return(
+  <View style={styles.container}>
+{/* THIS IS THE UPPER MENU CODE */}
+        <View style={{height:'8%', flexDirection:'row', justifyContent:'flex-end', padding:10, shadowOffset: { width: 0, height: 3 },shadowColor: 'black',shadowOpacity: 0.27, elevation: 6,zIndex:999,  backgroundColor:'#fff'}}>
+          <View style={{marginHorizontal:'68.5%', paddingVertical:'3%',  justifyContent:'flex-start', alignItems:'flex-start'}}>
+            <View style={{width:23, height:3, backgroundColor:'black', marginVertical:'10%'}}></View>
+            <View style={{width:23, height:3, backgroundColor:'black', marginVertical:'10%'}}></View>
+            <View style={{width:23, height:3, backgroundColor:'black', marginVertical:'10%'}}></View>
           </View>
-          <View>
-            <Image style={styles.relativeIcon} source={require('./assets/Vectorperson.png')} />
+          <View style={{marginTop:'2%'}}><Text style={{fontSize: 23}}>Contacts</Text></View>
+        </View>
+{/* THIS IS THE UPPER MENU CODE */}
+
+{/* THIS IS THE USER INFO */}
+        <View style={{flexDirection:'row', padding:20, justifyContent:'flex-end', paddingBottom:'0.5%'}}>
+          <View style={{width:150, height:150}}>
+            <Image style={{width:'100%', height:'100%'}} source={require('./assets/man-pngrepo-com.png')} />
+          </View>
+        </View> 
+
+        <View style={{alignItems:'flex-end', justifyContent:'flex-end', padding:10, paddingTop:'0.5%'}}>
+          <View style={{flexWrap:'wrap', marginRight:'5%'}}>
+            <Text style={{fontSize:22}}>John Doe</Text>
+          </View>
+
+          <View style={{flexWrap:'wrap', marginRight:'5%'}}>
+            <Text style={{fontSize:14}}>NHS NUMBER: 000 000 0000</Text>
+          </View>
+        
+        </View> 
+{/* THIS IS THE USER INFO */}
+
+{/* THIS IS THE BUTTON */}
+        <View style={{padding:'2%'}}>
+      
+          <TouchableOpacity style={{marginRight:'15%', marginLeft:'15%', alignItems:'center', justifyContent:'center', flexDirection:'row', backgroundColor:'white', padding:10, shadowColor: 'rgba(0,0,0, .25)',
+              shadowOffset: { height: 0, width: 0 }, shadowOpacity: 2, shadowRadius: 4, elevation: 5, borderRadius:40, }} onPress={this.showDialog}>
+            <View style={{justifyContent:'center', flexWrap:'wrap', marginHorizontal:10}}>
+              <Text style={{fontSize:22}}>My relatives/friends</Text>
+            </View>
+         
+            <View style={{width:35, height:35, marginHorizontal:10}}>
+              <Image style={{width:'100%', height:'100%'}} source={require('./assets/Vector.png')} />
+            </View>
+          </TouchableOpacity>
+       
+        </View> 
+{/* THIS IS THE USER BUTTON */}
+
+
+{/* THIS IS THE USER RELATIVE CODE */}
+        <View style={{ marginLeft:'10%',justifyContent:'space-between',flexWrap:'wrap', alignItems:'flex-end', flexDirection:'row',backgroundColor:'#58ACA8', padding:'2%', marginVertical:'2%'}}>
+          
+          <View style={{flexWrap:'wrap', height:100}}>
+            <Text style={{fontSize:25, color:'white', paddingBottom:'3%'}}>Jane Doe</Text>
+            <Text style={{fontSize:18, color:'white', lineHeight:25}}>St.George&#39;s Hospital{"\n"}Last updated: 14th June 10:20</Text>
+          </View>
+
+          <View style={{width:75, height:75, marginBottom:'7%', marginRight:'1%'}}>
+            <Image style={{width:60, height:60}} source={require('./assets/Vectorperson.png')} />
           </View>
         </View>  
-        <View style={styles.contact}>
-          <View style={styles.relatives}>
-            <Text style={styles.relativesFont}>Jill Doe</Text>
-          </View>    
-          <View style={styles.info}>
-              <Text style={styles.relativeInfo}>St.George&#39;s Hospital{"\n"}Last updated: 14th June 10:20</Text>
+
+        <View style={{ marginLeft:'10%',justifyContent:'space-between',flexWrap:'wrap', alignItems:'flex-end', flexDirection:'row',backgroundColor:'#58ACA8', padding:'2%', marginVertical:'2%'}}>
+          
+          <View style={{flexWrap:'wrap', height:100}}>
+            <Text style={{fontSize:25, color:'white', paddingBottom:'3%'}}>Jill Doe</Text>
+            <Text style={{fontSize:18, color:'white', lineHeight:25}}>St.George&#39;s Hospital{"\n"}Last updated: 18th June 20:00</Text>
           </View>
-          <View>
-            <Image style={styles.relativeIcon} source={require('./assets/Vectorperson.png')} />
+
+          <View style={{width:75, height:75, marginBottom:'7%', marginRight:'1%'}}>
+            <Image style={{width:60, height:60}} source={require('./assets/Vectorperson.png')} />
           </View>
-      </View>
-      </View>  
+        </View>  
+{/* THIS IS THE USER RELATIVE CODE */}
+
+</View>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection:'column',
-    backgroundColor:'white',
+    backgroundColor:'#fff',
   },
-  buttonContainer: {
-    padding:5,
-    backgroundColor:'white',
-    justifyContent:'center',
-    flexDirection: 'row',
-    alignItems:'center'
-  },
-  button: {
-    shadowColor: 'rgba(0,0,0, .25)',
-    shadowOffset: { height: 0, width: 0 },
-    shadowOpacity: 2,
-    shadowRadius: 4,
-    elevation: 5,
-    borderRadius:40,
-    backgroundColor: '#fff',
-    height: 55,
-    width: "75%",
-    alignItems:'center',
-    justifyContent:'center',
-  },
-  text:{
-    fontSize:22,
-    fontWeight:"500",
-    top:"25%",
-    right:"10%"
-  },
-  image:{
-    left:'40%',
-    bottom:'20%'
-  },
-  contact:{
-    //flexBasis: '20%',
-   //alignItems:'flex-end',
-    //justifyContent:'flex-end',
-    //padding:'1%', 
-    marginLeft:'5%',
-    marginVertical: '2.5%',
-    backgroundColor: '#32AFA9',
-    //height:'32%',
-    borderColor: '#32AFA9',
-    //borderWidth: 1,
-    shadowColor: 'rgba(0, 0, 0, 0.5)',
-    shadowOffset: {width: 0, height: 0},
-    shadowRadius: 4,
-    shadowOpacity: 2,
-    elevation: 5,
-    height:'20%'
-    //flexWrap:'wrap'
-  },
-  relatives:{
-    alignItems:'flex-start',
-    flexGrow:1,
-    paddingBottom:10,
-    marginTop:'5%',
-    marginLeft:'2%'
-    
-  },  
-  relativesFont:{
-    fontSize:30, 
-    color:'white'
-  },  
-  relativeIcon:{
-    marginLeft:'75%',
-    flexDirection:'row',
-    bottom:'30%',
-    height: 70,
-    width:70,
-  },  
-  info:{
-    flexGrow:1,
-    marginLeft:'2%'
-  },
-  relativeInfo:{
-    fontSize:25,
-    lineHeight:40,
-    color:'white'
-  }    
 });  
