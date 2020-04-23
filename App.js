@@ -14,6 +14,7 @@ import Mental from './PP/Components/Pages/Mental';
 import Feed from './PP/Components/Pages/Feed';
 import About from './PP/Components/Pages/About';
 import Settings from './PP/Components/Pages/Settings';
+import timeline from './PP/Components/Pages/timeline';
 //Trying to import button
 import CustomButton from './PP/Components/Pages/CustomButton';
 
@@ -68,6 +69,7 @@ export default class App extends React.Component {
                <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
                <Stack.Screen name="Mental Health" component={Mental}/>
                <Stack.Screen name="Feed" component={Feed}/>
+               <Stack.Screen name="timeline" component={timeline}/>
              </Stack.Navigator>
            </NavigationContainer>
         );

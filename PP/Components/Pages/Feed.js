@@ -10,7 +10,7 @@ export default function Mental() {
   const [update, infoUpdate] = useState([
     {info: '    08/07/2020 at 12:45\n \n    Temperature of 38C.                ', key: '1'},
     {info: '10/07/2020 at 17:50\n \nOxygen therapy administered.   ', key: '2'},
-    {info: '14/07/2020 at 03:00\n \nBlood pressure 140/90 mm Hg', key: '3'},
+    {info: '14/07/2020 at 03:00\n \nBlood pressure 140/90 mm Hg.', key: '3'},
     {info: '18/07/2020 at 09:00\n \nWeight: 75 kg.                               ', key: '4'},
     {info: '23/07/2020 at 14:00\n \nGlucose levels: 7.8 mmol/L        ', key: '5'},
     {info: '26/07/2020 at 13:00\n \nHeart rate: 80 bpm.\n \n Normal heart rate.                       ', key: '6'},
@@ -24,7 +24,6 @@ export default function Mental() {
     if (!fontsLoaded) {
         return <AppLoading />;
     } else {
-
         return (
             <ScrollView style = {{width:'100%'}}>
               <View>
@@ -100,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         paddingTop: 70,
         paddingHorizontal: 20,
-        paddingBottom: 150
+        paddingBottom: 100
         //justifyContent: 'center',
         //alignSelf: 'center'
     },
@@ -110,6 +109,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#FFFFFF',
       fontSize: 15,
       marginLeft: -40,
+      //marginBottom: 5,
       borderWidth: 1,
       borderRadius: 10,
       borderColor: '#BDBDBD'
@@ -118,13 +118,17 @@ const styles = StyleSheet.create({
     button: {
       margin: 5,
       borderRadius: 40,
-      paddingVertical: 5,
-      paddingHorizontal: 70,
+      borderColor: '#000000',
+      paddingVertical: 8,
+      paddingHorizontal: 50,
       marginBottom: 100,
-      backgroundColor: '#00BFA5'
+      marginTop: -85,
+      backgroundColor: '#E0E0E0',
+      marginLeft: 60,
+      marginRight: 40
     },
     buttonText: {
-      color: 'white',
+      color: '#000000',
       fontWeight: 'bold',
       fontSize: 16,
       textAlign: 'center'
