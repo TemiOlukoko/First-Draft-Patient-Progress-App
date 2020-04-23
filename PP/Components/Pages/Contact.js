@@ -55,7 +55,7 @@ export default class PlaceHolder extends React.Component {
 
 
 {/* THIS IS THE USER RELATIVE CODE */}
-        <View style={{ marginLeft:'10%',justifyContent:'space-between',flexWrap:'wrap', alignItems:'flex-end', flexDirection:'row',backgroundColor:'#58ACA8', padding:'2%', marginVertical:'2%'}}>
+        <TouchableOpacity style={{ marginLeft:'10%',justifyContent:'space-between',flexWrap:'wrap', alignItems:'flex-end', flexDirection:'row',backgroundColor:'#58ACA8', padding:'2%', marginVertical:'2%'}}>
           
           <View style={{flexWrap:'wrap', height:100}}>
             <Text style={{fontSize:25, color:'white', paddingBottom:'3%'}}>Jane Doe</Text>
@@ -65,7 +65,7 @@ export default class PlaceHolder extends React.Component {
           <View style={{width:75, height:75, marginBottom:'7%', marginRight:'1%'}}>
             <Image style={{width:60, height:60}} source={require('./assets/Vectorperson.png')} />
           </View>
-        </View>  
+        </TouchableOpacity>  
 
         <View style={{ marginLeft:'10%',justifyContent:'space-between',flexWrap:'wrap', alignItems:'flex-end', flexDirection:'row',backgroundColor:'#58ACA8', padding:'2%', marginVertical:'2%'}}>
           
