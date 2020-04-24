@@ -1,136 +1,186 @@
+/*React Native TimeLine ListView / Flatlist*/
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, Button} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image} from 'react-native';
+import Timeline from 'react-native-timeline-flatlist';
+import add from './assets/add.png';
+import JD from './assets/JD_test.png';
+export default class BasicTimeLine extends Component {
+  constructor() {
+    super();
+    this.data = [
+      {
+        time: '12:45',
+        title: '08/07/2020',
+        description:
+          'Temperature of 38C.',
+        circleColor: '#58ACA8',
+        lineColor: '#58ACA8',
+        fontSize: 5,
+      },
+      {
+        time: '17:50',
+        title: '10/07/2020',
+        description:
+          'Oxygen therapy administered.',
+        circleColor: '#58ACA8',
+        lineColor: '#58ACA8'
+      },
+      {
+        time: '03:00',
+        title: '14/07/2020',
+        description:
+          'Blood pressure 140/90 mm Hg.',
+        circleColor: '#58ACA8',
+        lineColor: '#58ACA8'
+      },
+      {
+        time: '09:00',
+        title: '18/07/2020',
+        description:
+          'Weight: 75 kg.',
+        circleColor: '#58ACA8',
+        lineColor: '#58ACA8'
+      },
+      {
+        time: '14:00',
+        title: '23/07/2020',
+        description:
+          'Glucose levels: 7.8 mmol/L.',
+        circleColor: '#58ACA8',
+        lineColor: '#58ACA8'
+      },
+      {
+        time: '13:00',
+        title: '26/07/2020',
+        description:
+          'Heart rate: 80 bpm - Normal heart rate.',
+        circleColor: '#58ACA8',
+        lineColor: '#58ACA8',
+      },
+    ];
+  }
 
-import { useFonts } from '@use-expo/font';
-import { AppLoading } from 'expo';
+  render() {
+    return (
+        <ScrollView style = {{width:'100%'}}>
+            {/* THIS IS THE UPPER MENU CODE */}
+            <View style={styles.upperMenu}>
+            <View style={styles.lineFlex}>
+                <View style={styles.line}></View>
+                <View style={styles.line}></View>
+                <View style={styles.line}></View>
+            </View>
 
-export default function Mental() {
+            <View style={styles.title}><Text style={{fontSize: 23, fontFamily: 'Bold'}}>Feed</Text></View>
+            </View>
+            {/* THIS IS THE UPPER MENU CODE */}
 
-  //Make boxes for feed
-  const [update, infoUpdate] = useState([
-    {info: '    08/07/2020 at 12:45\n \n    Temperature of 38C.                ', key: '1'},
-    {info: '10/07/2020 at 17:50\n \nOxygen therapy administered.   ', key: '2'},
-    {info: '14/07/2020 at 03:00\n \nBlood pressure 140/90 mm Hg.', key: '3'},
-    {info: '18/07/2020 at 09:00\n \nWeight: 75 kg.                               ', key: '4'},
-    {info: '23/07/2020 at 14:00\n \nGlucose levels: 7.8 mmol/L        ', key: '5'},
-    {info: '26/07/2020 at 13:00\n \nHeart rate: 80 bpm.\n \n Normal heart rate.                       ', key: '6'},
-  ]);
-
-    let [fontsLoaded] = useFonts({
-        'Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
-        'semiBold': require('./assets/fonts/Montserrat-SemiBold.ttf')
-    });
-
-    if (!fontsLoaded) {
-        return <AppLoading />;
-    } else {
-        return (
-            <ScrollView style = {{width:'100%'}}>
-              <View>
-                  {/* THIS IS THE UPPER MENU CODE */}
-                  <View style={styles.upperMenu}>
-                      <View style={styles.lineFlex}>
-                          <View style={styles.line}></View>
-                          <View style={styles.line}></View>
-                          <View style={styles.line}></View>
-                      </View>
-
-                      <View style={styles.title}><Text style={{ fontSize: 20, fontFamily: 'semiBold' }}>Feed</Text></View>
-                  </View>
-                  {/* THIS IS THE UPPER MENU CODE */}
-                  
-                  <View style={styles.container}>
-                    { update.map((item) => {
-                      return(
-                        <View key = {item.key}>
-                          <Text style ={styles.item}>{item.info}</Text>
-                        </View>
-                      );
-                    })}
-                </View>
-                <TouchableOpacity>
-                  <View style = {styles.button}>
-                  <Text style={styles.buttonText}>Request an update</Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
-            </ScrollView>
-        );
-    }
+        <View style={styles.container}>
+            <Timeline style={{ flex: 1 }} data={this.data} descriptionStyle={{ color: 'black', fontSize:18}}/>
+        </View>
+        <View style={styles.add}>
+        <TouchableOpacity onPress={()=> {alert('Requesting update')}}>
+            <Image source={add}/>
+        </TouchableOpacity>
+        </View>
+        <View style={styles.Button}>
+            <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=> {alert('Requesting update')}}>
+            <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
+            </TouchableOpacity>
+        </View>
+        <View style={styles.JD}>
+            <Image source={JD}/>
+        </View>
+    <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>John Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES: stable</Text>
+        </View>
+    </ScrollView>
+    );
+  }
 }
 
-
 const styles = StyleSheet.create({
-    upperMenu: {
-        width: '100%',
-        height: 70,
-        backgroundColor: "#fff",
-        shadowOffset: { width: 0, height: 3 },
-        shadowColor: 'black',
-        shadowOpacity: 0.27,
-        elevation: 6,
-        // zIndex needed for iOS
-        zIndex: 999,
-        flexDirection: 'row',
-        marginBottom: 30
-    },
+  container: {
+    flex: 1,
+    //padding: 10,
+    backgroundColor: '#FFFFFF',
+    marginBottom: 160,
+    marginTop: 75,
+    paddingBottom: 190,
+    paddingTop: 55,
+    paddingHorizontal: 20,
+},
+  upperMenu: {
+    width: '100%',
+    height: 70,
+    backgroundColor: "#fff",
+    shadowOffset: { width: 0, height: 3 },
+    shadowColor: 'black',
+    shadowOpacity: 0.27,
+    elevation: 6,
+    // zIndex needed for iOS
+    zIndex: 999,
+    flexDirection: 'row',
+    marginBottom: 30
+},
+line: {
+    width: 23,
+    height: 3,
+    backgroundColor: 'black',
+    marginBottom: 4
+},
+lineFlex: {
+    marginTop: 29,
+    marginLeft: 18
 
-    line: {
-        width: 23,
-        height: 3,
-        backgroundColor: 'black',
-        marginBottom: 4
-    },
-
-    lineFlex: {
-        marginTop: 29,
-        marginLeft: 18
-
-    },
-
-    title: {
-        marginTop: 25,
-        marginLeft: 300
-    },
-
-    container: {
-        //flex: 1,
-        alignItems: 'center',
-        backgroundColor: '#FFFFFF',
-        paddingTop: 70,
-        paddingHorizontal: 20,
-        paddingBottom: 100
-        //justifyContent: 'center',
-        //alignSelf: 'center'
-    },
-    item: {
-      marginTop: 40,
-      padding: 15,
-      backgroundColor: '#FFFFFF',
-      fontSize: 15,
-      marginLeft: -40,
-      //marginBottom: 5,
-      borderWidth: 1,
-      borderRadius: 10,
-      borderColor: '#BDBDBD'
-      //shadowColor: 'black'
-    },
-    button: {
-      margin: 5,
-      borderRadius: 40,
-      borderColor: '#000000',
-      paddingVertical: 8,
-      paddingHorizontal: 50,
-      marginBottom: 100,
-      marginTop: -85,
-      backgroundColor: '#E0E0E0',
-      marginLeft: 60,
-      marginRight: 40
-    },
-    buttonText: {
-      color: '#000000',
-      fontWeight: 'bold',
-      fontSize: 16,
-      textAlign: 'center'
+},
+title: {
+    marginTop: 25,
+    marginLeft: 300
+},
+Button: {
+    marginTop: -35,
+    marginBottom: 5,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 40,
+    paddingVertical: 10,
+    paddingHorizontal: 70,
+    marginLeft: 70,
+    marginRight: 40,
+    //borderColor: 'black',
+    borderWidth: 0.3,
+    shadowColor: "#000",
+    shadowOffset: {
+	width: 0,
+	height: 5,},
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 0,
+    
+  },
+  add: {
+    marginTop: -320,
+    marginLeft: 320,
+    flex: 1,
+    //position: 'absolute',
+    zIndex: 1
+    //zIndex: 999
+    //marginBottom: 5,
+    //marginLeft: 70,
+  },
+  JD: {
+    paddingTop:5,
+    marginTop: -716,
+    marginBottom: 700,
+    alignSelf: 'flex-end',
+    //marginRight:40,
+  },
+  infoBox: {
+    paddingTop: 29,
+    marginTop: -830,
+    marginLeft: 2,
+    width: 298,
+    height: 120,
+    marginBottom: 700,
+    backgroundColor: '#FFFFFF'  
   }
 });

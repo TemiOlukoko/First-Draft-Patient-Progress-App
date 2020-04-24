@@ -8,7 +8,7 @@ import { AppLoading } from 'expo';
 
 export default function OnBoardingThree({navigation}) {
   const pressHandler3 = () => {
-    navigation.navigate('timeline')
+    navigation.navigate('Feed')
   }  
 
 // fonts load
