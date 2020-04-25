@@ -3,7 +3,7 @@ import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button, Image} from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import add from './assets/add.png';
-import JD from './assets/JD_test.png';
+import Jane from './assets/Jane.png';
 export default class BasicTimeLine extends Component {
   constructor() {
     super();
@@ -29,7 +29,7 @@ export default class BasicTimeLine extends Component {
         time: '03:00',
         title: '14/07/2020',
         description:
-          'Blood pressure 140/90 mm Hg.',
+          'Normal blood pressure.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
@@ -45,7 +45,7 @@ export default class BasicTimeLine extends Component {
         time: '14:00',
         title: '23/07/2020',
         description:
-          'Glucose levels: 7.8 mmol/L.',
+          'Normal glucose levels.',
         circleColor: '#58ACA8',
         lineColor: '#58ACA8'
       },
@@ -88,10 +88,10 @@ export default class BasicTimeLine extends Component {
             <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
             </TouchableOpacity>
         </View>
-        <View style={styles.JD}>
-            <Image source={JD}/>
+        <View style={styles.Jane}>
+            <Image source={Jane}/>
         </View>
-    <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>John Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES: stable</Text>
+    <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES: stable</Text>
         </View>
     </ScrollView>
     );
@@ -167,7 +167,7 @@ Button: {
     //marginBottom: 5,
     //marginLeft: 70,
   },
-  JD: {
+  Jane: {
     paddingTop:5,
     marginTop: -716,
     marginBottom: 700,
