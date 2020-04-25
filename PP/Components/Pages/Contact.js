@@ -317,7 +317,7 @@ popupCancel:{
    borderRadius:40
   },
 
-relativeCard:{
+relativeCards:{
     marginLeft:'10%',
     justifyContent:'space-between',
     flexWrap:'wrap',
