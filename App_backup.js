@@ -15,7 +15,6 @@ import Mental from './PP/Components/Pages/Mental';
 import About from './PP/Components/Pages/About';
 import Settings from './PP/Components/Pages/Settings';
 import Feed from './PP/Components/Pages/Feed';
-import signUp from './PP/Components/Pages/signUp';
 
 //Trying to import button
 import CustomButton from './PP/Components/Pages/CustomButton';
@@ -62,26 +61,25 @@ const SettingScreen = ({navigation}) => (
   </View>
 )
 export default class App extends React.Component {
-  createHomeStack = () =>
-  <Stack.Navigator>
-  <Stack.Screen options={{title:'Home'}}  name="Home" component = {HomeScreen}/>
-  <Stack.Screen name="Sign in" component = {SettingScreen}/>
-  <Stack.Screen name="Welcome-1" component = {OnBoarding1}/>
-  <Stack.Screen name="Welcome-2" component ={OnBoarding2}/>
-  <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
-  <Stack.Screen name="Mental Health" component={Mental}/>
-  <Stack.Screen name="Feed" component={Feed}/>
-</Stack.Navigator>
+
+  createDrawerStack = () =>
+  <Drawer.Navigator name ="Home" children={HomeScreen}>
+  <Drawer.Screen name="Settings" component={Settings} />
+  <Drawer.Screen name="About" component={About} />
+  </Drawer.Navigator>
+
     render() {
         return (
            <NavigationContainer>
-             <Drawer.Navigator>
-             <Drawer.Screen name ="Home" children={this.createHomeStack}/>
-             <Drawer.Screen name="Settings" component={Settings}/>
-             <Drawer.Screen name="About" component={About} />
-             <Drawer.Screen name = "Feed" component={Feed}/>
-             <Drawer.Screen name = "sign Up" component={signUp}/>
-            </Drawer.Navigator>
+             <Stack.Navigator>
+               <Stack.Screen options={{title:'Home'}}  name="Home" component = {HomeScreen}/>
+               <Stack.Screen name="Sign in" component = {SettingScreen}/>
+               <Stack.Screen name="Welcome-1" component = {OnBoarding1}/>
+               <Stack.Screen name="Welcome-2" component ={OnBoarding2}/>
+               <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
+               <Stack.Screen name="Mental Health" component={Mental}/>
+               <Stack.Screen name="Feed" component={Feed}/>
+             </Stack.Navigator>
            </NavigationContainer>
         );
     }
@@ -117,4 +115,3 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   }
 });
-
