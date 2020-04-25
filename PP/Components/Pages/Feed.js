@@ -71,7 +71,7 @@ export default class BasicTimeLine extends Component {
                 <View style={styles.line}></View>
             </View>
 
-            <View style={styles.title}><Text style={{fontSize: 23, fontFamily: 'Bold'}}>Feed</Text></View>
+            <View style={styles.title}><Text style={{fontSize: 23, fontWeight: 'Bold'}}>Feed</Text></View>
             </View>
             {/* THIS IS THE UPPER MENU CODE */}
 
@@ -85,13 +85,13 @@ export default class BasicTimeLine extends Component {
         </View>
         <View style={styles.Button}>
             <TouchableOpacity style={{alignItems:'center',justifyContent:'center'}} onPress={()=> {alert('Requesting update')}}>
-            <Text style={{fontSize:16, fontFamily: 'Bold', color: '#000000'}}>Request an update</Text>
+            <Text style={{fontSize:16, fontWeight: 'Bold', color: '#000000'}}>Request an update</Text>
             </TouchableOpacity>
         </View>
         <View style={styles.Jane}>
             <Image source={Jane}/>
         </View>
-    <View style={styles.infoBox}><Text style = {{fontSize: 15, fontFamily: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES: stable</Text>
+    <View style={styles.infoBox}><Text style = {{fontSize: 15, fontWeight: 'Bold', color: '#000000', textAlign: 'center'}}>Jane Doe{"\n"}{"\n"}NHS NUMBER: 000 000 0000{"\n"}{"\n"}PROGRES: stable</Text>
         </View>
     </ScrollView>
     );

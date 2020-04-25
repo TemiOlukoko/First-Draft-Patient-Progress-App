@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import header from './PP/Components/Pages/header';
 
 //Importing different screens
 import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
@@ -80,7 +81,7 @@ export default class App extends React.Component {
              <Drawer.Screen name="Settings" component={Settings}/>
              <Drawer.Screen name="About" component={About} />
              <Drawer.Screen name = "Feed" component={Feed}/>
-             <Drawer.Screen name = "sign Up" component={signUp}/>
+             <Drawer.Screen name="Sign Up" component={signUp}/>
             </Drawer.Navigator>
            </NavigationContainer>
         );
