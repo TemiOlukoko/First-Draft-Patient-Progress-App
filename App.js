@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TextInput } from 'react-native-gesture-handler';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import header from './PP/Components/Pages/header';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 //Importing different screens
 import OnBoarding1 from './PP/Components/Pages/OnBoarding1';
@@ -17,6 +17,7 @@ import About from './PP/Components/Pages/About';
 import Settings from './PP/Components/Pages/Settings';
 import Feed from './PP/Components/Pages/Feed';
 import signUp from './PP/Components/Pages/signUp';
+import Contacts from './PP/Components/Pages/contact_test';
 
 //Trying to import button
 import CustomButton from './PP/Components/Pages/CustomButton';
@@ -72,6 +73,7 @@ export default class App extends React.Component {
   <Stack.Screen name="Welcome-3" component ={OnBoarding3}/>
   <Stack.Screen name="Mental Health" component={Mental}/>
   <Stack.Screen name="Feed" component={Feed}/>
+  <Stack.Screen name="Contacts" component = {Contacts}/>
 </Stack.Navigator>
     render() {
         return (
@@ -116,6 +118,11 @@ const styles = StyleSheet.create({
     borderColor: '#BDBDBD',
     paddingLeft: 5,
     paddingBottom: 5,
+  },
+  Button: {
+    backgroundColor: 'pink',
+    alignItems: 'center',
+    marginBottom: 50
   }
 });
 
